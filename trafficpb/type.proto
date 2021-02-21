@@ -1,0 +1,25 @@
+syntax = "proto3";
+package trafficpb;
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.goproto_getters_all) = false;
+option (gogoproto.goproto_enum_prefix_all) = false;
+
+message Request {
+  int64 cid  = 1;
+  bytes data = 2;
+}
+
+enum StatusCode {
+  Foo = 0;
+  Bar = 1;
+}
+
+message Response {
+  StatusCode code = 1;
+  bytes data = 2;
+}

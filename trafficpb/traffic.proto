@@ -1,0 +1,9 @@
+syntax = "proto3";
+package trafficpb;
+
+import "type.proto";
+
+service Traffic {
+  rpc Write(Request) returns (Response) {}
+}
+
